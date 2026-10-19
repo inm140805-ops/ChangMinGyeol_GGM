@@ -68,6 +68,7 @@ public class CoreLoopManager : MonoBehaviour
         float nextDayMoney = nowMoney * 2 / 1.5f;
 
         needMoney = nextDayMoney;
+        player.money = 0;
     }
 
     private void OnDrawGizmos()
@@ -171,7 +172,7 @@ public class CoreLoopManager : MonoBehaviour
             UnityEngine.Cursor.lockState = CursorLockMode.None;
             UnityEngine.Cursor.visible = true;
             StopAllCoroutines();
-            NeedMoneyCount(player.money);
+            
         }
         else if (!resultbool)
         {
@@ -201,7 +202,7 @@ public class CoreLoopManager : MonoBehaviour
     public void AgainButton()
     {
         
-        player.money = 0;
+        
         dayCount += 1;
         player.fallOrder = 0;
         player.completeOrder = 0;
@@ -219,7 +220,7 @@ public class CoreLoopManager : MonoBehaviour
         timerEnd = false;
         timer.text = "00:00";
 
-        
+        NeedMoneyCount(player.money);
     }
 
     private void HideWearingText()
