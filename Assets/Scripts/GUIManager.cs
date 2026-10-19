@@ -33,6 +33,10 @@ public class GUIManager : MonoBehaviour
     {
         SetupSensitivity();
         SetupMusicVolume();
+        if (settingPanal.activeSelf)
+        {
+            settingPanal.SetActive(false);
+        }
     }
 
     private void Update()
